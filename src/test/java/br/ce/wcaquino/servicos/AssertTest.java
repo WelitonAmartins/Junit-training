@@ -61,6 +61,9 @@ public class AssertTest {
 		
 		//verificar se os obj nao está vazio
 		Assert.assertNotNull(u2);
+		
+		//AssertThat -> verifique que 
+		
 	}
 
 }
