@@ -24,8 +24,6 @@ import br.com.well.utils.DataUtils;
 
 public class LocacaoServiceTest {
 	
-	private static int contador = 0;
-	
 	private LocacaoService service;
 	// com a anotação Rule e a instancia do obj ErrorCollector conseguimos dividir o
 	// erro, no padrao o
@@ -42,30 +40,7 @@ public class LocacaoServiceTest {
 	// iniciado no começo dos teste
 	@Before
 	public void setup() {
-		System.out.println("Before");
 		service = new LocacaoService();
-		
-		contador ++;
-		System.out.println(contador);
-	}
-
-	// ultilizar para algum contexto que seja generico, algo que precisa ser no
-	// final dos teste,finalizado, ser deburrado nos final dos teste
-	@After
-	public void tearDown() {
-		System.out.println("After");
-	}
-	
-	//executa antes de todos os teste
-	@BeforeClass
-	public static void setupClass() {
-		System.out.println("Before Class");
-	}
-	
-	// execute depois de todos os testes
-	@AfterClass
-	public static void tearDownClass() {
-		System.out.println("After Class");
 	}
 
 	@Test
