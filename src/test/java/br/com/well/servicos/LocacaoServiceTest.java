@@ -2,6 +2,7 @@ package br.com.well.servicos;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -43,7 +44,7 @@ public class LocacaoServiceTest {
 	}
 
 	@Test
-	public void testeLocacao() throws Exception {
+	public void deveAlugarFilme() throws Exception {
 		// cenario
 
 		Usuario usuario = new Usuario("Usuario 1");
@@ -107,5 +108,16 @@ public class LocacaoServiceTest {
 
 		service.alugarFilme(usuario, null);
 
+	}
+	
+	@Test
+	public void devePagar75PctNoFilme3() {
+		//cenario
+		Usuario usuario = new Usuario("Usuario 1");
+		List<Filme> filmes = Arrays.asList(new Filme("Filme 1", 2, 4.0), (new Filme("Filme 2", 2, 4.0)), (new Filme("Filme 3", 2, 4.0)));
+		
+		Locacao resultado = service.alugarFilme(usuario, filmes);
+		
+		Assert.assertThat(resultado, is(11.0));
 	}
 }
